@@ -11,15 +11,11 @@ This package requires PHP 5.4.
 ## Installation
 
 The best way to install this package is using [Composer](http://getcomposer.org/).
-Add to your `composer.json`:
 
-```js
-"require": {
-	"zenify/flash-message-component": "@dev"
-}
+Add by command:
+```sh
+composer require "zenify/flash-message-component:@dev"
 ```
-
-Run `composer update`.
 
 And register the extension in `config.neon`:
 
@@ -27,6 +23,7 @@ And register the extension in `config.neon`:
 extensions:
 	- Zenify\Components\FlasMessageComponent\DI\Extension
 ```
+
 
 ## Use
 
