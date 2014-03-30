@@ -14,7 +14,7 @@ namespace Zenify\Components\FlashMessageComponent\UI;
 use Nette;
 
 
-class Control extends Nette\Application\UI\Control;
+class Control extends Nette\Application\UI\Control
 {
 	/** @var Nette\Localization\ITranslator */
 	private $translator;

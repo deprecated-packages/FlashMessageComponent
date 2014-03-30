@@ -13,7 +13,7 @@ This package requires PHP 5.4.
 The best way to install this package is using [Composer](http://getcomposer.org/):
 
 ```sh
-composer require "zenify/flash-message-component:@dev"
+$ composer require "zenify/flash-message-component:@dev"
 ```
 
 And register the extension in `config.neon`:
