@@ -1,8 +1,7 @@
 {
 	"name": "zenify/flash-message-component",
-	"description": "Flash message component for Nette Framework.",
-	"keywords": ["component", "flash message", "Zenify", "Nette"],
-	"license": ["MIT"],
+	"description": "Flash message component for Nette Framework",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Tomáš Votruba",
@@ -12,5 +11,10 @@
 	"require": {
 		"php": ">=5.4",
 		"nette/nette": "@dev"
+	},
+	"autoload": {
+		"psr-0": {
+			"Zenify\\": "src/"
+		}
 	}
 }
