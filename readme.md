@@ -19,7 +19,7 @@ composer require "zenify/flash-message-component:@dev"
 
 And register the extension in `config.neon`:
 
-```neon
+```yaml
 extensions:
 	- Zenify\Components\FlasMessageComponent\DI\Extension
 ```
