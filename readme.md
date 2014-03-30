@@ -10,9 +10,8 @@ This package requires PHP 5.4.
 
 ## Installation
 
-The best way to install this package is using [Composer](http://getcomposer.org/).
+The best way to install this package is using [Composer](http://getcomposer.org/):
 
-Add by command:
 ```sh
 composer require "zenify/flash-message-component:@dev"
 ```
