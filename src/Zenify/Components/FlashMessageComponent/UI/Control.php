@@ -20,7 +20,7 @@ class Control extends Nette\Application\UI\Control
 	private $translator;
 
 
-	public function inject(Nette\Localization\ITranslator $translator = NULL)
+	public function __construct(Nette\Localization\ITranslator $translator = NULL)
 	{
 		$this->translator = $translator;
 	}
@@ -40,7 +40,7 @@ class Control extends Nette\Application\UI\Control
 	private function getFlashes()
 	{
 		$flashes = $this->parent->template->flashes;
-		if ($this->translator && $this->presenter->module == 'front') {
+		if ($this->translator) {
 			foreach ($flashes as $key => $row) {
 				$flashes[$key]->message = $this->translator->translate($row->message);
 			}
