@@ -20,7 +20,7 @@ And register the factory in `config.neon`:
 
 ```yaml
 services:
-	- Zenify\FlasMessageComponent\UI\IControl
+	- Zenify\FlashMessageComponent\UI\IControl
 ```
 
 
