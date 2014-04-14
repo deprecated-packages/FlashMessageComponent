@@ -16,11 +16,11 @@ The best way to install this package is using [Composer](http://getcomposer.org/
 $ composer require "zenify/flash-message-component:@dev"
 ```
 
-And register the extension in `config.neon`:
+And register the factory in `config.neon`:
 
 ```yaml
-extensions:
-	- Zenify\Components\FlasMessageComponent\DI\Extension
+services:
+	- Zenify\FlasMessageComponent\UI\IControl
 ```
 
 
