@@ -31,7 +31,7 @@ Inject to presenter
 ```php
 class Presenter ... {
 
-	/** @inject @var Zenify\Components\FlasMessageComponent\UI\IControl */
+	/** @inject @var Zenify\FlasMessageComponent\UI\IControl */
 	public $flashMessageControl;
 
 
