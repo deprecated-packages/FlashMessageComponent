@@ -5,7 +5,7 @@
  * Copyright (c) 2012 Tomas Votruba (http://tomasvotruba.cz)
  */
 
-namespace Zenify\FlashMessageComponent\UI;
+namespace Zenify\FlashMessageComponent;
 
 
 interface IControl

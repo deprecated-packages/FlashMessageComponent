@@ -5,7 +5,8 @@
 
 This package requires PHP 5.4.
 
-- [nette/nette](https://github.com/nette/nette/)
+- [nette/application](https://github.com/nette/application/)
+- [nette/utils](https://github.com/nette/utils/)
 
 
 ## Installation
@@ -13,14 +14,14 @@ This package requires PHP 5.4.
 The best way to install this package is using [Composer](http://getcomposer.org/):
 
 ```sh
-$ composer require "zenify/flash-message-component:@dev"
+$ composer require zenify/flash-message-component:@dev
 ```
 
 And register the factory in `config.neon`:
 
 ```yaml
 services:
-	- Zenify\FlashMessageComponent\UI\IControl
+	- Zenify\FlashMessageComponent\IControl
 ```
 
 
@@ -31,11 +32,11 @@ Inject to presenter
 ```php
 class Presenter ... {
 
-	/** @inject @var Zenify\FlasMessageComponent\UI\IControl */
+	/** @inject @var Zenify\FlasMessageComponent\IControl */
 	public $flashMessageControl;
 
 
-	public function createComponentFlashMessageControl()
+	public function createComponentFlashMessage()
 	{
 		return $this->flashMessageControl->create();
 	}
@@ -46,7 +47,7 @@ class Presenter ... {
 Render in template
 
 ```smarty
-{control flashMessageControl}
+{control flashMessage}
 ```
 
 Translator support included.

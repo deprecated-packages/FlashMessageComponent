@@ -9,8 +9,8 @@
 		}
 	],
 	"require": {
-		"php": ">=5.4",
-		"nette/nette": "@dev"
+		"nette/application": "@dev",
+		"nette/utils": "@dev"
 	},
 	"autoload": {
 		"psr-0": {
