@@ -3,10 +3,7 @@
 
 ## Requirements
 
-This package requires PHP 5.4.
-
-- [nette/application](https://github.com/nette/application/)
-- [nette/utils](https://github.com/nette/utils/)
+See section `require` in [composer.json](composer.json).
 
 
 ## Installation

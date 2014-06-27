@@ -10,7 +10,8 @@
 	],
 	"require": {
 		"nette/application": "@dev",
-		"nette/utils": "@dev"
+		"nette/utils": "@dev",
+		"zenify/flash-message-component": "@dev"
 	},
 	"autoload": {
 		"psr-0": {
