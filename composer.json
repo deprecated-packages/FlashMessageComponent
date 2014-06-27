@@ -1,6 +1,6 @@
 {
 	"name": "zenify/flash-message-component",
-	"description": "Flash message component for Nette Framework",
+	"description": "Flash message component for Nette",
 	"license": "MIT",
 	"authors": [
 		{
@@ -9,9 +9,7 @@
 		}
 	],
 	"require": {
-		"nette/application": "@dev",
-		"nette/utils": "@dev",
-		"zenify/flash-message-component": "@dev"
+		"nette/application": "~2.2"
 	},
 	"autoload": {
 		"psr-0": {
