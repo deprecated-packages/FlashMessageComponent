@@ -29,13 +29,19 @@ Inject to presenter
 ```php
 class Presenter ... {
 
-	/** @inject @var Zenify\FlasMessageComponent\IControl */
-	public $flashMessageControl;
+	/**
+	 * @inject
+	 * @var Zenify\FlashMessageComponent\IControlFactory
+	 */
+	public $flashMessageControlFactory;
 
 
+	/**
+	 * @return Zenify\FlashMessageComponent\Control 
+	 */
 	public function createComponentFlashMessage()
 	{
-		return $this->flashMessageControl->create();
+		return $this->flashMessageControlFactory->create();
 	}
 
 }
