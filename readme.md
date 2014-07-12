@@ -1,5 +1,8 @@
 # Zenify/FlashMessageComponent
 
+[![Build Status](https://travis-ci.org/Zenify/FlashMessageComponent.svg?branch=master)]
+[![Downloads this Month](https://img.shields.io/packagist/dm/zenify/flash-message-component.svg)](https://packagist.org/packages/zenify/flash-message-component)
+
 
 ## Requirements
 
