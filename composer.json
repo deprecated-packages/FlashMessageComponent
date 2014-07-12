@@ -9,8 +9,17 @@
 		}
 	],
 	"require": {
-		"nette/application": "~2.2"
+		"nette/application": "~2.0"
 	},
+    "require-dev": {
+        "latte/latte": "~2.0",
+        "nette/bootstrap": "~2.0",
+        "nette/mail": "~2.0",
+        "nette/safe-stream": "~2.0",
+        "nette/tester": "@dev",
+        "nette/utils": "~2.0",
+        "tracy/tracy": "~2.0"
+    },
 	"autoload": {
 		"psr-0": {
 			"Zenify\\": "src/"

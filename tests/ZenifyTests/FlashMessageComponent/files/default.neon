@@ -1,0 +1,2 @@
+services:
+	- Zenify\FlashMessageComponent\IControlFactory
