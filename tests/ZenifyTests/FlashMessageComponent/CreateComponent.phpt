@@ -9,11 +9,7 @@
 
 namespace ZenifyTests\FlashMessageComponent;
 
-use Mockista\ClassGenerator\ClassGenerator;
-use Mockista\ClassGenerator\MethodFinder;
 use Nette;
-use Mockista;
-use NetteModule\MicroPresenter;
 use Tester\Assert;
 use Tester\TestCase;
 use Zenify;
