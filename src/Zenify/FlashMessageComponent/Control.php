@@ -10,8 +10,14 @@ namespace Zenify\FlashMessageComponent;
 use Nette;
 
 
+/**
+ * @method void setClassPrefix()
+ */
 class Control extends Nette\Application\UI\Control
 {
+	/** @var string */
+	private $classPrefix = 'alert alert-';
+
 	/** @var Nette\Localization\ITranslator */
 	private $translator;
 
@@ -25,13 +31,14 @@ class Control extends Nette\Application\UI\Control
 	public function render()
 	{
 		$this->template->flashes = $this->getFlashes();
+		$this->template->classPrefix = $this->classPrefix;
 		$this->template->setFile(__DIR__ . '/templates/default.latte');
 		$this->template->render();
 	}
 
 
 	/**
-	 * @return []
+	 * @return string[]
 	 */
 	private function getFlashes()
 	{
