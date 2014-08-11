@@ -48,9 +48,9 @@ class Control extends Nette\Application\UI\Control
 	private function getFlashes()
 	{
 		$flashes = $this->parent->template->flashes;
-		if ($this->getTranslator()) {
+		if ($translator = $this->getTranslator()) {
 			foreach ($flashes as $key => $row) {
-				$flashes[$key]->message = $this->getTranslator()->translate($row->message);
+				$flashes[$key]->message = $translator->translate($row->message);
 			}
 		}
 
