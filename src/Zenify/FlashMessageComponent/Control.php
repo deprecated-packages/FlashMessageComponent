@@ -7,16 +7,21 @@
 
 namespace Zenify\FlashMessageComponent;
 
+use Kdyby\Translation\PrefixedTranslator;
 use Nette;
 
 
 /**
  * @method void setClassPrefix()
+ * @method void setTranslatorPrefix()
  */
 class Control extends Nette\Application\UI\Control
 {
 	/** @var string */
 	private $classPrefix = 'alert alert-';
+
+	/** @var string */
+	private $translatorPrefix = NULL;
 
 	/** @var Nette\Localization\ITranslator */
 	private $translator;
@@ -43,13 +48,26 @@ class Control extends Nette\Application\UI\Control
 	private function getFlashes()
 	{
 		$flashes = $this->parent->template->flashes;
-		if ($this->translator) {
+		if ($this->getTranslator()) {
 			foreach ($flashes as $key => $row) {
-				$flashes[$key]->message = $this->translator->translate($row->message);
+				$flashes[$key]->message = $this->getTranslator()->translate($row->message);
 			}
 		}
 
 		return $flashes;
+	}
+
+
+	/**
+	 * @return Nette\Localization\ITranslator
+	 */
+	private function getTranslator()
+	{
+		if ($this->translator && $this->translatorPrefix) {
+			$this->translator = new PrefixedTranslator($this->translatorPrefix, $this->translator);
+		}
+
+		return $this->translator;
 	}
 
 }
