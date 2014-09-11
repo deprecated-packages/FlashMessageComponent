@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Zenify/FlashMessageComponent.svg?branch=master)](https://travis-ci.org/Zenify/FlashMessageComponent)
 [![Downloads this Month](https://img.shields.io/packagist/dm/zenify/flash-message-component.svg)](https://packagist.org/packages/zenify/flash-message-component)
+[![Latest stable](https://img.shields.io/packagist/v/zenify/flash-message-component.svg)](https://packagist.org/packages/zenify/flash-message-component)
 
 
 ## Requirements
@@ -40,7 +41,7 @@ class Presenter ... {
 
 
 	/**
-	 * @return Zenify\FlashMessageComponent\Control 
+	 * @return Zenify\FlashMessageComponent\Control
 	 */
 	public function createComponentFlashMessage()
 	{
