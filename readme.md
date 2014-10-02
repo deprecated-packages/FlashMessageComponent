@@ -22,7 +22,7 @@ And register the factory in `config.neon`:
 
 ```yaml
 services:
-	- Zenify\FlashMessageComponent\IControl
+	- Zenify\FlashMessageComponent\ControlFactory
 ```
 
 
@@ -31,11 +31,12 @@ services:
 Inject to presenter
 
 ```php
-class Presenter ... {
+class Presenter ...
+{
 
 	/**
 	 * @inject
-	 * @var Zenify\FlashMessageComponent\IControlFactory
+	 * @var Zenify\FlashMessageComponent\ControlFactory
 	 */
 	public $flashMessageControlFactory;
 
