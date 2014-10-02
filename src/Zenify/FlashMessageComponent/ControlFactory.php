@@ -8,9 +8,12 @@
 namespace Zenify\FlashMessageComponent;
 
 
-interface IControlFactory
+interface ControlFactory
 {
-	/** @return Control */
+
+	/**
+	 * @return Control
+	 */
 	public function create();
 
 }

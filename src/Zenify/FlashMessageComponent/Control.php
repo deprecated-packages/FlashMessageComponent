@@ -12,18 +12,26 @@ use Nette;
 
 
 /**
+ * @property-read \Nette\Bridges\ApplicationLatte\Template|\stdClass $template
  * @method void setClassPrefix()
  * @method void setTranslatorPrefix()
  */
 class Control extends Nette\Application\UI\Control
 {
-	/** @var string */
+
+	/**
+	 * @var string
+	 */
 	private $classPrefix = 'alert alert-';
 
-	/** @var string */
+	/**
+	 * @var string
+	 */
 	private $translatorPrefix = NULL;
 
-	/** @var Nette\Localization\ITranslator */
+	/**
+	 * @var Nette\Localization\ITranslator
+	 */
 	private $translator;
 
 
