@@ -1,10 +1,5 @@
 <?php
 
-/**
- * This file is part of Zenify
- * Copyright (c) 2012 Tomas Votruba (http://tomasvotruba.cz)
- */
-
 if (@!include __DIR__ . '/../../vendor/autoload.php') {
 	echo 'Install Nette Tester using `composer update --dev`';
 	exit(1);
@@ -12,7 +7,6 @@ if (@!include __DIR__ . '/../../vendor/autoload.php') {
 
 // configure environment
 Tester\Environment::setup();
-class_alias('Tester\Assert', 'Assert');
 date_default_timezone_set('Europe/Prague');
 
 // create temporary directory
@@ -27,10 +21,6 @@ $_SERVER['REQUEST_TIME'] = 1234567890;
 $_ENV = $_GET = $_POST = array();
 
 
-//function id($val) {
-//	return $val;
-//}
-
 function run(Tester\TestCase $testCase) {
-	$testCase->run(isset($_SERVER['argv'][1]) ? $_SERVER['argv'][1] : NULL);
+	$testCase->run();
 }

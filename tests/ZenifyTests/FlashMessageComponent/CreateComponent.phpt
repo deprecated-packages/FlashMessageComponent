@@ -1,10 +1,7 @@
 <?php
 
 /**
- * Test: Zenify\FlashMessageComponent\Control.
- *
  * @testCase
- * @package Zenify\FlashMessageComponent
  */
 
 namespace ZenifyTests\FlashMessageComponent;
@@ -17,6 +14,7 @@ use Zenify;
 
 require_once __DIR__ . '/../bootstrap.php';
 
+
 class CreateComponentTest extends TestCase
 {
 
@@ -28,7 +26,6 @@ class CreateComponentTest extends TestCase
 		$config = new Nette\Configurator;
 		$config->setTempDirectory(TEMP_DIR);
 		$config->addConfig(__DIR__ . '/files/default.neon');
-
 		return $config->createContainer();
 	}
 
@@ -38,7 +35,7 @@ class CreateComponentTest extends TestCase
 	 */
 	private function getControl()
 	{
-		$factory = $this->createContainer()->getByType('Zenify\FlashMessageComponent\IControlFactory');
+		$factory = $this->createContainer()->getByType('Zenify\FlashMessageComponent\ControlFactory');
 		return $factory->create();
 	}
 
@@ -46,15 +43,19 @@ class CreateComponentTest extends TestCase
 	public function testFactory()
 	{
 		$container = $this->createContainer();
-		$factory = $container->getByType('Zenify\FlashMessageComponent\IControlFactory');
-		Assert::true($factory instanceof Zenify\FlashMessageComponent\IControlFactory);
+		Assert::type(
+			'Zenify\FlashMessageComponent\ControlFactory',
+			$container->getByType('Zenify\FlashMessageComponent\ControlFactory')
+		);
 	}
 
 
 	public function testControl()
 	{
-		$control = $this->getControl();
-		Assert::true($control instanceof Zenify\FlashMessageComponent\Control);
+		Assert::type(
+			'Zenify\FlashMessageComponent\Control',
+			$this->getControl()
+		);
 	}
 
 }
