@@ -18,7 +18,8 @@
 		"nette/safe-stream": "~2.0",
 		"nette/tester": "@dev",
 		"nette/utils": "~2.0",
-		"tracy/tracy": "~2.0"
+		"tracy/tracy": "~2.0",
+		"zenify/coding-standard": "~0.0.1"
 	},
 	"autoload": {
 		"psr-0": {
