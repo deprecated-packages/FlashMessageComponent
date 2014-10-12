@@ -30,6 +30,11 @@ class Control extends Nette\Application\UI\Control
 	private $translatorPrefix = NULL;
 
 	/**
+	 * @var boolean
+	 */
+	private $keepFirstItemOnly;
+
+	/**
 	 * @var Nette\Localization\ITranslator
 	 */
 	private $translator;
@@ -41,8 +46,12 @@ class Control extends Nette\Application\UI\Control
 	}
 
 
-	public function render()
+	/**
+	 * @param bool
+	 */
+	public function render($keepOnlyFirstItem = TRUE)
 	{
+		$this->keepFirstItemOnly = $keepOnlyFirstItem;
 		$this->template->flashes = $this->getFlashes();
 		$this->template->classPrefix = $this->classPrefix;
 		$this->template->setFile(__DIR__ . '/templates/default.latte');
@@ -51,17 +60,17 @@ class Control extends Nette\Application\UI\Control
 
 
 	/**
-	 * @return string[]
+	 * @return mixed
 	 */
 	private function getFlashes()
 	{
 		$flashes = $this->parent->template->flashes;
-		if ($translator = $this->getTranslator()) {
-			foreach ($flashes as $key => $row) {
-				$flashes[$key]->message = $translator->translate($row->message);
-			}
+		if ($this->getTranslator()) {
+			$flashes = $this->translateFlashes($flashes);
 		}
-
+		if ($this->keepFirstItemOnly === TRUE) {
+			$flashes = $this->keepOnlyFirstItem($flashes);
+		}
 		return $flashes;
 	}
 
@@ -74,8 +83,34 @@ class Control extends Nette\Application\UI\Control
 		if ($this->translator && $this->translatorPrefix) {
 			$this->translator = new PrefixedTranslator($this->translatorPrefix, $this->translator);
 		}
-
 		return $this->translator;
+	}
+
+
+	/**
+	 * @return array
+	 */
+	private function translateFlashes(array $flashes)
+	{
+		if ($translator = $this->getTranslator()) {
+			foreach ($flashes as $key => $row) {
+				$flashes[$key]->message = $translator->translate($row->message);
+			}
+		}
+		return $flashes;
+	}
+
+
+	/**
+	 * @param array $flashes
+	 * @return array
+	 */
+	private function keepOnlyFirstItem($flashes)
+	{
+		foreach ($flashes as $flash) {
+			return array($flash);
+		}
+		return array();
 	}
 
 }
