@@ -49,7 +49,7 @@ class Control extends Nette\Application\UI\Control
 	/**
 	 * @param bool
 	 */
-	public function render($keepOnlyFirstItem = TRUE)
+	public function render($keepOnlyFirstItem = FALSE)
 	{
 		$this->keepFirstItemOnly = $keepOnlyFirstItem;
 		$this->template->flashes = $this->getFlashes();
