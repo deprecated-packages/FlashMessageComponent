@@ -30,7 +30,7 @@ class Control extends Nette\Application\UI\Control
 	private $translatorPrefix = NULL;
 
 	/**
-	 * @var boolean
+	 * @var bool
 	 */
 	private $keepFirstItemOnly;
 
