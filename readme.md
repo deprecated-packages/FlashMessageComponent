@@ -12,10 +12,10 @@ See section `require` in [composer.json](composer.json).
 
 ## Installation
 
-The best way to install this package is using [Composer](http://getcomposer.org/):
+To get the latest version run [Composer](http://getcomposer.org/) command:
 
 ```sh
-$ composer require zenify/flash-message-component:@dev
+$ composer require zenify/flash-message-component
 ```
 
 And register the factory in `config.neon`:
