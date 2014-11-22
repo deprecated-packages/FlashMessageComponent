@@ -9,12 +9,13 @@ namespace Zenify\FlashMessageComponent;
 
 use Kdyby\Translation\PrefixedTranslator;
 use Nette;
+use Nette\Bridges\ApplicationLatte\Template;
 
 
 /**
- * @property-read \Nette\Bridges\ApplicationLatte\Template|\stdClass $template
- * @method void setClassPrefix()
- * @method void setTranslatorPrefix()
+ * @property-read Template|\stdClass $template
+ * @method setClassPrefix()
+ * @method setTranslatorPrefix()
  */
 class Control extends Nette\Application\UI\Control
 {
@@ -108,9 +109,9 @@ class Control extends Nette\Application\UI\Control
 	private function keepOnlyFirstItem($flashes)
 	{
 		foreach ($flashes as $flash) {
-			return array($flash);
+			return [$flash];
 		}
-		return array();
+		return [];
 	}
 
 }

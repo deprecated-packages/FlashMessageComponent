@@ -1,9 +1,5 @@
 <?php
 
-/**
- * @testCase
- */
-
 namespace ZenifyTests\FlashMessageComponent;
 
 use Nette;

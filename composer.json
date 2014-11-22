@@ -3,12 +3,10 @@
 	"description": "Flash message component for Nette",
 	"license": "MIT",
 	"authors": [
-		{
-			"name": "Tomáš Votruba",
-			"homepage": "http://tomasvotruba.cz"
-		}
+		{ "name": "Tomáš Votruba", "homepage": "http://tomasvotruba.cz" }
 	],
 	"require": {
+		"php": ">=5.4",
 		"nette/application": "~2.0"
 	},
 	"require-dev": {
