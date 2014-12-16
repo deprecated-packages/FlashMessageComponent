@@ -1,15 +1,25 @@
 <?php
 
 /**
- * This file is part of FlashMessageComponent
- *
- * Copyright (c) 2014 Pears Health Cyber, s.r.o. (http://pearshealthcyber.cz)
- *
- * For the full copyright and license information, please view
- * the file license.md that was distributed with this source code.
+ * This file is part of Zenify
+ * Copyright (c) 2012 Tomas Votruba (http://tomasvotruba.cz)
  */
 
-class FlashMessageExtension
+namespace Zenify\FlashMessageComponent\DI;
+
+use Nette\DI\CompilerExtension;
+use Zenify\FlashMessageComponent\FlashMessageControlFactory;
+
+
+class FlashMessageExtension extends CompilerExtension
 {
+
+	public function loadConfiguration()
+	{
+		$builder = $this->getContainerBuilder();
+
+		$builder->addDefinition($this->prefix('flashMessageFactory'))
+			->setImplement(FlashMessageControlFactory::class);
+	}
 
 }

@@ -9,15 +9,17 @@ namespace Zenify\FlashMessageComponent;
 
 use Kdyby\Translation\PrefixedTranslator;
 use Nette;
+use Nette\Application\UI\Control;
 use Nette\Bridges\ApplicationLatte\Template;
+use Nette\Localization\ITranslator;
 
 
 /**
- * @property-read Template|\stdClass $template
+ * @property-read Template $template
  * @method setClassPrefix()
  * @method setTranslatorPrefix()
  */
-class Control extends Nette\Application\UI\Control
+class FlashMessageControl extends Control
 {
 
 	/**
@@ -36,12 +38,12 @@ class Control extends Nette\Application\UI\Control
 	private $keepFirstItemOnly;
 
 	/**
-	 * @var Nette\Localization\ITranslator
+	 * @var ITranslator
 	 */
 	private $translator;
 
 
-	public function __construct(Nette\Localization\ITranslator $translator = NULL)
+	public function __construct(ITranslator $translator = NULL)
 	{
 		$this->translator = $translator;
 	}
@@ -53,15 +55,17 @@ class Control extends Nette\Application\UI\Control
 	public function render($keepOnlyFirstItem = FALSE)
 	{
 		$this->keepFirstItemOnly = $keepOnlyFirstItem;
-		$this->template->flashes = $this->getFlashes();
-		$this->template->classPrefix = $this->classPrefix;
+		$this->template->setParameters([
+			'flashes' => $this->getFlashes(),
+			'classPrefix' => $this->classPrefix
+		]);
 		$this->template->setFile(__DIR__ . '/templates/default.latte');
 		$this->template->render();
 	}
 
 
 	/**
-	 * @return mixed
+	 * @return string[]
 	 */
 	private function getFlashes()
 	{
@@ -77,7 +81,7 @@ class Control extends Nette\Application\UI\Control
 
 
 	/**
-	 * @return Nette\Localization\ITranslator
+	 * @return ITranslator
 	 */
 	private function getTranslator()
 	{
@@ -89,7 +93,7 @@ class Control extends Nette\Application\UI\Control
 
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	private function translateFlashes(array $flashes)
 	{
