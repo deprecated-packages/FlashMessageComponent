@@ -6,7 +6,7 @@
 		{ "name": "Tomáš Votruba", "homepage": "http://tomasvotruba.cz" }
 	],
 	"require": {
-		"php": ">=5.4",
+		"php": ">=5.5",
 		"nette/application": "~2.0"
 	},
 	"require-dev": {
@@ -14,15 +14,20 @@
 		"nette/bootstrap": "~2.0",
 		"nette/mail": "~2.0",
 		"nette/safe-stream": "~2.0",
-		"nette/tester": "@dev",
 		"nette/utils": "~2.0",
 		"tracy/tracy": "~2.0",
-		"zenify/coding-standard": "~1.0",
-		"jakub-onderka/php-parallel-lint": "~0.8"
+		"zenify/coding-standard": "~3.0",
+		"jakub-onderka/php-parallel-lint": "~0.8",
+		"phpunit/phpunit": "~4.4"
 	},
 	"autoload": {
 		"psr-4": {
-			"Zenify\\FlashMessageComponent\\": "src/"
+			"Zenify\\FlashMessageComponent\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Zenify\\FlashMessageComponent\\Tests\\": "tests"
 		}
 	}
 }

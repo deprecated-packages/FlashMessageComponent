@@ -5,24 +5,22 @@
 [![Latest stable](https://img.shields.io/packagist/v/zenify/flash-message-component.svg)](https://packagist.org/packages/zenify/flash-message-component)
 
 
-## Requirements
-
-See section `require` in [composer.json](composer.json).
+- Includes translator support.
 
 
 ## Installation
 
-To get the latest version run [Composer](http://getcomposer.org/) command:
+Install the latest version via composer:
 
 ```sh
 $ composer require zenify/flash-message-component
 ```
 
-And register the factory in `config.neon`:
+And register extension in `config.neon`:
 
 ```yaml
-services:
-	- Zenify\FlashMessageComponent\ControlFactory
+extensions:
+	- Zenify\FlashMessageComponent\DI\FlashMessageExtension
 ```
 
 
@@ -36,13 +34,13 @@ class Presenter ...
 
 	/**
 	 * @inject
-	 * @var Zenify\FlashMessageComponent\ControlFactory
+	 * @var Zenify\FlashMessageComponent\FlashMessageControlFactory
 	 */
 	public $flashMessageControlFactory;
 
 
 	/**
-	 * @return Zenify\FlashMessageComponent\Control
+	 * @return Zenify\FlashMessageComponent\FlashMessageControl
 	 */
 	public function createComponentFlashMessage()
 	{
@@ -57,5 +55,3 @@ Render in template
 ```smarty
 {control flashMessage}
 ```
-
-Translator support included.
