@@ -1,4 +1,4 @@
-# Zenify/FlashMessageComponent
+# Flash Message Component
 
 [![Build Status](https://img.shields.io/travis/Zenify/FlashMessageComponent.svg?style=flat-square)](https://travis-ci.org/Zenify/FlashMessageComponent)
 [![Quality Score](https://img.shields.io/scrutinizer/g/Zenify/FlashMessageComponent.svg?style=flat-square)](https://scrutinizer-ci.com/g/Zenify/FlashMessageComponent)
@@ -11,9 +11,9 @@ This extension simplifies use of flash messages in templates just to `{control f
 Also includes translator support and css class prefix.
 
 
-## Installation
+## Install
 
-Install the latest version via composer:
+Via Composer:
 
 ```sh
 $ composer require zenify/flash-message-component
@@ -27,7 +27,7 @@ extensions:
 ```
 
 
-## Use
+## Usage
 
 Inject to presenter
 

@@ -2,7 +2,6 @@
 
 namespace Zenify\FlashMessageComponent\Tests;
 
-use Nette;
 use Nette\DI\Container;
 use PHPUnit_Framework_TestCase;
 use Zenify;
